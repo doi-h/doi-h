@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<p>
+  글번호 : {{ db.id }}
+</p>
+
+<p>
+  제목 : {{ db.title }}
+</p>
+<p>
+  내용 : {{ db.content }}
+</p>
+ <a href="{% url 'appname:edit' db.id %}"class="btn btn-outline-primary">수정해바라</a>
+ <a href="{% url 'appname:delete' db.id %}"class="btn btn-outline-primary">삭제해바라</a>
+
+
+{% endblock %}

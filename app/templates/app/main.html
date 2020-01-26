@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="content container">
+    <div class="row">
+        <div class="col-md-8">
+          {% for db in db %}
+              <div class="post">
+                  <p>updated: {{ db.updated_at }}</p>
+                  {% if user.is_authenticated %}
+
+                  <a class="btn btn-default" href="{% url 'appname:edit' db.id %}"><span class="glyphicon glyphicon-pencil"></span></a>
+                  {% endif %}
+
+                  <h1><a href="">{{ db.title }}</a></h1>
+                  <p>{{ db.content|linebreaksbr }}</p>
+                  <a href="{% url 'appname:show' db.id %}" class="btn btn-primary">상세보기라고 새꺄</a>
+              </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

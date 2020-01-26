@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+  <form class="" action="{% url 'appname:update' db.id %}" method="post">
+    {{ dbform.as_p }}
+    {% csrf_token %}
+
+    <input type="submit" name="" value="수정완료 해 짜샤">
+  </form>
+
+</div>
+
+
+{% endblock %}

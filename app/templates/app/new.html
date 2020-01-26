@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+
+  <form class="" action="{% url 'appname:create' %}" method="post">
+
+    {{ dbform.as_p }}
+    {% csrf_token %}
+
+  <input type="submit" name="" value="글 새로 저장해부러">
+
+  </form>
+</div>
+
+
+{% endblock %}
